@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ormiston Primary Behavior Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Popup -->
+    <div id="welcome-popup" class="popup">
+        <div class="popup-content">
+            <h2>Welcome to Ormiston Primary Behavior Monitor</h2>
+            <button id="continue-btn">Continue</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="hidden">
+        <header>
+            <h1>Select a Behavior</h1>
+            <img src="logo.png" alt="Logo" class="logo">
+        </header>
+
+        <div class="behavior-container">
+            <div class="behavior" id="aggressive">
+                <h2>Aggressive / Bullying</h2>
+                <button onclick="showSolutions('aggressive')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-aggressive">
+                    <ul>
+                        <li>Teach conflict resolution skills.</li>
+                        <li>Encourage empathy and perspective-taking.</li>
+                        <li>Set clear consequences for aggressive behavior.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="anxiety">
+                <h2>Anxiety</h2>
+                <button onclick="showSolutions('anxiety')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-anxiety">
+                    <ul>
+                        <li>Provide a safe space for calming down.</li>
+                        <li>Teach relaxation techniques.</li>
+                        <li>Gradually expose the student to anxiety-provoking situations with support.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="confrontational">
+                <h2>Confrontational / Defensive</h2>
+                <button onclick="showSolutions('confrontational')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-confrontational">
+                    <ul>
+                        <li>Use a calm and non-threatening approach.</li>
+                        <li>Set clear, consistent expectations for behavior.</li>
+                        <li>Provide positive reinforcement for appropriate responses.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="defiant">
+                <h2>Defiant</h2>
+                <button onclick="showSolutions('defiant')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-defiant">
+                    <ul>
+                        <li>Give choices to encourage cooperation.</li>
+                        <li>Maintain a calm and assertive demeanor.</li>
+                        <li>Clearly define and consistently enforce rules.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="disorganized">
+                <h2>Disorganized</h2>
+                <button onclick="showSolutions('disorganized')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-disorganized">
+                    <ul>
+                        <li>Use visual schedules and reminders.</li>
+                        <li>Break tasks into smaller, manageable steps.</li>
+                        <li>Provide organizational tools and supports.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="disrespectful">
+                <h2>Disrespectful</h2>
+                <button onclick="showSolutions('disrespectful')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-disrespectful">
+                    <ul>
+                        <li>Model respectful behavior and language.</li>
+                        <li>Teach and practice appropriate ways to communicate.</li>
+                        <li>Set clear expectations and consequences for disrespect.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="disruptive">
+                <h2>Disruptive</h2>
+                <button onclick="showSolutions('disruptive')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-disruptive">
+                    <ul>
+                        <li>Implement a behavior management plan.</li>
+                        <li>Provide structured and engaging activities.</li>
+                        <li>Use a calm and consistent response to disruptions.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="failing-work">
+                <h2>Failing To Turn In Work</h2>
+                <button onclick="showSolutions('failing-work')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-failing-work">
+                    <ul>
+                        <li>Provide regular reminders and check-ins.</li>
+                        <li>Offer support with organization and time management.</li>
+                        <li>Communicate with parents about homework expectations.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="frustration">
+                <h2>Frustration</h2>
+                <button onclick="showSolutions('frustration')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-frustration">
+                    <ul>
+                        <li>Teach coping strategies and problem-solving skills.</li>
+                        <li>Provide a break area for calming down.</li>
+                        <li>Encourage communication about feelings and frustrations.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="hyperactive">
+                <h2>Hyperactive</h2>
+                <button onclick="showSolutions('hyperactive')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-hyperactive">
+                    <ul>
+                        <li>Incorporate physical activity breaks.</li>
+                        <li>Provide a structured and predictable environment.</li>
+                        <li>Use visual and auditory cues to help focus.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="impulsive">
+                <h2>Impulsive</h2>
+                <button onclick="showSolutions('impulsive')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-impulsive">
+                    <ul>
+                        <li>Teach self-control strategies and techniques.</li>
+                        <li>Provide clear and immediate feedback on behavior.</li>
+                        <li>Use visual prompts to remind the student to think before acting.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="inappropriate-language">
+                <h2>Inappropriate Language</h2>
+                <button onclick="showSolutions('inappropriate-language')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-inappropriate-language">
+                    <ul>
+                        <li>Set clear rules regarding acceptable language.</li>
+                        <li>Teach alternative ways to express feelings and frustrations.</li>
+                        <li>Provide immediate feedback on inappropriate language use.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="lack-participation">
+                <h2>Lack of Participation</h2>
+                <button onclick="showSolutions('lack-participation')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-lack-participation">
+                    <ul>
+                        <li>Use engaging and interactive teaching methods.</li>
+                        <li>Provide choices to increase student investment.</li>
+                        <li>Offer positive reinforcement for participation.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="lack-responsibility">
+                <h2>Lack of Responsibility</h2>
+                <button onclick="showSolutions('lack-responsibility')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-lack-responsibility">
+                    <ul>
+                        <li>Set clear expectations and follow through with consequences.</li>
+                        <li>Encourage self-management through goal setting.</li>
+                        <li>Provide opportunities for student-led responsibilities.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="lack-social-skills">
+                <h2>Lack of Social Skills</h2>
+                <button onclick="showSolutions('lack-social-skills')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-lack-social-skills">
+                    <ul>
+                        <li>Teach and model appropriate social interactions.</li>
+                        <li>Use role-playing to practice social skills.</li>
+                        <li>Provide feedback and praise for appropriate social behavior.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="low-work-completion">
+                <h2>Low/No Work Completion</h2>
+                <button onclick="showSolutions('low-work-completion')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-low-work-completion">
+                    <ul>
+                        <li>Break tasks into smaller, manageable steps.</li>
+                        <li>Provide regular check-ins and feedback.</li>
+                        <li>Use a reward system to encourage task completion.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="lying-cheating">
+                <h2>Lying/Cheating</h2>
+                <button onclick="showSolutions('lying-cheating')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-lying-cheating">
+                    <ul>
+                        <li>Teach the importance of honesty and integrity.</li>
+                        <li>Provide clear consequences for lying and cheating.</li>
+                        <li>Encourage open communication and problem-solving.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="name-calling">
+                <h2>Name Calling</h2>
+                <button onclick="showSolutions('name-calling')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-name-calling">
+                    <ul>
+                        <li>Address the behavior immediately with clear consequences.</li>
+                        <li>Teach respect and appropriate communication skills.</li>
+                        <li>Encourage empathy and understanding of others' feelings.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="negative-attitude">
+                <h2>Negative Attitude</h2>
+                <button onclick="showSolutions('negative-attitude')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-negative-attitude">
+                    <ul>
+                        <li>Encourage a growth mindset and positive self-talk.</li>
+                        <li>Provide support and understanding for underlying issues.</li>
+                        <li>Model and reinforce positive behavior and attitudes.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="off-task-disruptive">
+                <h2>Off-Task Disruptive</h2>
+                <button onclick="showSolutions('off-task-disruptive')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-off-task-disruptive">
+                    <ul>
+                        <li>Use visual and auditory cues to redirect focus.</li>
+                        <li>Provide clear and structured tasks.</li>
+                        <li>Offer frequent breaks and incentives for on-task behavior.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="off-task-non-disruptive">
+                <h2>Off-Task Non-Disruptive</h2>
+                <button onclick="showSolutions('off-task-non-disruptive')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-off-task-non-disruptive">
+                    <ul>
+                        <li>Set clear expectations for staying on task.</li>
+                        <li>Provide engaging and relevant activities.</li>
+                        <li>Monitor and provide gentle reminders to stay focused.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="out-of-seat">
+                <h2>Out of Seat</h2>
+                <button onclick="showSolutions('out-of-seat')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-out-of-seat">
+                    <ul>
+                        <li>Set clear expectations for staying seated.</li>
+                        <li>Provide movement breaks as needed.</li>
+                        <li>Use a visual reminder or cue for staying in seat.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="poor-coping-skills">
+                <h2>Poor Coping Skills</h2>
+                <button onclick="showSolutions('poor-coping-skills')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-poor-coping-skills">
+                    <ul>
+                        <li>Teach and practice coping strategies.</li>
+                        <li>Provide support during stressful situations.</li>
+                        <li>Encourage the use of coping tools and techniques.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="poor-peer-relationships">
+                <h2>Poor Peer Relationships</h2>
+                <button onclick="showSolutions('poor-peer-relationships')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-poor-peer-relationships">
+                    <ul>
+                        <li>Encourage social skills training and practice.</li>
+                        <li>Provide opportunities for positive peer interactions.</li>
+                        <li>Support conflict resolution and communication skills.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="poor-self-esteem">
+                <h2>Poor Self Esteem</h2>
+                <button onclick="showSolutions('poor-self-esteem')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-poor-self-esteem">
+                    <ul>
+                        <li>Encourage and reinforce strengths and achievements.</li>
+                        <li>Provide positive feedback and support.</li>
+                        <li>Teach self-compassion and self-acceptance.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="rushing-work">
+                <h2>Rushing Through Work</h2>
+                <button onclick="showSolutions('rushing-work')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-rushing-work">
+                    <ul>
+                        <li>Encourage a focus on quality over speed.</li>
+                        <li>Provide reminders to check work carefully.</li>
+                        <li>Set specific goals and checkpoints for completing work.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="sadness-depression">
+                <h2>Sadness / Depression</h2>
+                <button onclick="showSolutions('sadness-depression')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-sadness-depression">
+                    <ul>
+                        <li>Provide emotional support and a listening ear.</li>
+                        <li>Encourage participation in enjoyable activities.</li>
+                        <li>Seek help from school counselors or mental health professionals.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="somatic-complaints">
+                <h2>Somatic Complaints</h2>
+                <button onclick="showSolutions('somatic-complaints')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-somatic-complaints">
+                    <ul>
+                        <li>Assess for possible underlying issues or stressors.</li>
+                        <li>Provide a supportive and understanding environment.</li>
+                        <li>Encourage communication about physical symptoms and feelings.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="stealing">
+                <h2>Stealing</h2>
+                <button onclick="showSolutions('stealing')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-stealing">
+                    <ul>
+                        <li>Discuss the impact of stealing and promote honesty.</li>
+                        <li>Implement consequences for stealing.</li>
+                        <li>Provide opportunities for making amends and restitution.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="tantrums">
+                <h2>Tantrums / Out of Control</h2>
+                <button onclick="showSolutions('tantrums')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-tantrums">
+                    <ul>
+                        <li>Use calming techniques and strategies during tantrums.</li>
+                        <li>Provide a safe space for the student to calm down.</li>
+                        <li>Teach emotional regulation and coping skills.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="tardiness">
+                <h2>Tardiness</h2>
+                <button onclick="showSolutions('tardiness')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-tardiness">
+                    <ul>
+                        <li>Set clear expectations for punctuality.</li>
+                        <li>Provide reminders and support for time management.</li>
+                        <li>Address any underlying issues causing tardiness.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="unable-work">
+                <h2>Unable to Work Independently</h2>
+                <button onclick="showSolutions('unable-work')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-unable-work">
+                    <ul>
+                        <li>Provide step-by-step guidance and support.</li>
+                        <li>Gradually increase independence with scaffolded tasks.</li>
+                        <li>Use visual and verbal prompts to guide work.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="unfocused">
+                <h2>Unfocused / Inattentive</h2>
+                <button onclick="showSolutions('unfocused')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-unfocused">
+                    <ul>
+                        <li>Use structured and engaging activities.</li>
+                        <li>Provide visual and auditory cues to focus attention.</li>
+                        <li>Incorporate short, frequent breaks to maintain attention.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="unmotivated">
+                <h2>Unmotivated</h2>
+                <button onclick="showSolutions('unmotivated')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-unmotivated">
+                    <ul>
+                        <li>Set clear and achievable goals.</li>
+                        <li>Provide positive reinforcement and incentives.</li>
+                        <li>Make tasks relevant and interesting to the student.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="behavior" id="upset">
+                <h2>Upset / Crying</h2>
+                <button onclick="showSolutions('upset')">View Solutions</button>
+                <div class="solutions hidden" id="solutions-upset">
+                    <ul>
+                        <li>Provide emotional support and a safe space.</li>
+                        <li>Encourage communication about feelings.</li>
+                        <li>Address any underlying issues causing distress.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to show solutions for a selected behavior
+        function showSolutions(behavior) {
+            // Hide all solutions
+            const allSolutions = document.querySelectorAll('.solutions');
+            allSolutions.forEach(s => s.classList.add('hidden'));
+
+            // Show selected behavior's solutions
+            const solutions = document.getElementById(`solutions-${behavior}`);
+            solutions.classList.remove('hidden');
+        }
+
+        // Function to hide welcome popup and show main content
+        document.getElementById('continue-btn').addEventListener('click', () => {
+            document.getElementById('welcome-popup').classList.add('hidden');
+            document.getElementById('main-content').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
